@@ -1,0 +1,32 @@
+﻿@model IEnumerable<RegisterApp.Models.Student>
+
+@{
+    ViewBag.Title = "All Students";
+}
+
+<h2>All Students</h2>
+
+@if (Model == null || !Model.Any())
+{
+    <p>No students found. Displaying default students:</p>
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Age</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var student in Model)
+        {
+            <tr>
+                <td>@student.FirstName</td>
+                <td>@student.LastName</td>
+                <td>@student.Age</td>
+            </tr>
+        }
+    </tbody>
+</table>
